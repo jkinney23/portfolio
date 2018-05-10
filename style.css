@@ -1,0 +1,250 @@
+body {
+    background: rgb(4, 151, 170);
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Charcoal, sans-serif;
+    color: white;
+
+
+}
+
+/*
+ * Navigation Bar
+ */
+.nav {
+    position: fixed;
+    width: 100%;
+    padding: 0;
+    background: #24245D;
+    text-align: center;
+    line-height: 64px;
+    height: 64px;
+    box-shadow: 1px 2px 3px #444;
+
+}
+
+.nav ul {
+    list-style: none;
+    text-align: center;
+    background: #24245D;
+    padding: 0;
+    margin: 0;
+
+}
+
+.nav li {
+
+    box-shadow: 1px 2px 3px #444;
+
+}
+
+.nav a {
+    padding: 0 20px 0 20px;
+    display: block;
+    color: white;
+    display: block;
+    text-decoration: none;
+    transition: background-color .3s, color .3s;
+}
+
+.nav a:hover {
+    color: #444;
+    background-color: rgb(183, 181, 210);
+}
+
+.company {
+    display: none;
+}
+
+@media (min-width: 700px) {
+    
+    .nav-centered {
+        width: 80%;
+        margin: auto;
+        /*display: flex;*/
+    }
+    .nav ul {
+        text-align: right;
+    }
+    
+    .nav li {
+        box-shadow: none;
+
+    }
+    .company {
+        display: block;
+        margin-left: -20px;
+        float: left;
+    }
+    .nav-item {
+        display: inline-block;
+    }
+}
+
+/*
+ * About Content
+ */
+.about {
+    padding: 64px 0 48px 0;
+    background-color: white;
+}
+
+.about-img-container {
+    flex: 1;
+}
+
+.about-content {
+    margin-top: 56px;
+    text-align: center;
+    color: #444;
+    flex: 2;
+}
+
+.about img {
+    width: 240px;
+    height: 240px;
+    border-radius:50%;
+    display: block;
+    margin: 74px auto 20px auto;
+}
+
+@media (max-width: 699px) {
+    .about {
+        padding-top: 164px;
+    }
+}
+
+@media (min-width: 700px) {
+    .about {
+        display: flex;
+    }
+    .about-content {
+        margin-right: 10%;
+        text-align: right;
+    }
+    .about-img-container {
+        margin-left: 10%;
+    }
+}
+
+/*
+ * Portfoio content
+ */
+.portfolio {
+    width: 80%;
+    margin: 48px auto 48px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*  This is an example to do auto columns in a row
+    (I used flex wrap instead)
+@media (min-width: 600px) {
+    .portfolio {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+*/
+
+.portfolio-content {
+    color: #444;
+    margin: 24px auto 24px auto;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    background: white;
+    width: 280px;
+    /*flex-basis: 28%;  See above example notes */
+    box-shadow: 1px 2px 3px #444;
+}
+
+.portfolio img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    border-bottom: 1px solid #444;
+    box-shadow: 0 2px 3px #444;
+}
+
+.portfolio a {
+    color: #444;
+    text-decoration: none;
+}
+
+/* Contact content */
+.contact {
+    background: white; 
+    color: #444;
+}
+
+/* Footer content */
+
+.footer {
+    height: 176px;
+    padding-top: 26px;
+    margin-top: -48px;
+    display: flex;
+    /*background-color: rgb(167, 147, 124); */
+}
+
+.footer-content {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-icon {
+    font-size: 36px; 
+    color: white; 
+    margin: 20px 10px;
+    transition: color .3s;
+}
+
+.footer-icon:hover {
+    color: #444;
+}
+
+/* Bottom border content */
+.bottom {
+    width: 100%;
+    height: 72px;
+    line-height: 72px;
+    font-size: 1.2em;
+    text-align: center;
+    background: #24245D;
+}
+
+
+/* 
+ * Other Elements
+ */
+.section {
+    background-size: cover;
+    padding-top: 64px; 
+    min-height: 100vh;
+    margin-bottom: -10px;
+}
+
+p {
+    margin: 10px 30px 10px 30px;
+}
+
+h1, h2 {
+    font-weight: normal;
+    text-align: center;
+}
+
+hr {
+    height: 2px;
+    width: 48%;
+    border-bottom: 1px solid rgb(223, 221, 250);
+    margin-top: 28px;
+    margin-bottom: 48px;
+}
+
+.hr-light {
+    background-color: white;
+}
+
+.hr-dark {
+    background-color: #444;
+} 
