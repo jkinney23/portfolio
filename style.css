@@ -192,19 +192,30 @@ body {
     flex: 1;
 }
 
+.footer p {
+    margin: 20px;
+}
+
+.footer p a {
+    color: rgb(183, 181, 210);
+    text-decoration: none;
+    transition: color .3s;
+}
+
 .footer-icon {
+    color: white;
     font-size: 36px; 
-    color: white; 
     margin: 20px 10px;
     transition: color .3s;
 }
 
-.footer-icon:hover {
+.footer-icon:hover, .footer a:hover {
     color: #444;
 }
 
 /* Bottom border content */
 .bottom {
+    color: rgb(183, 181, 210);
     width: 100%;
     height: 72px;
     line-height: 72px;
@@ -212,7 +223,15 @@ body {
     text-align: center;
     background: #24245D;
 }
+ .bottom a {
+     color: rgb(183, 181, 210);
+     text-decoration: none;
+     transition: color .3s;
+ }
 
+ .bottom a:hover {
+     color: white;
+ }
 
 /* 
  * Other Elements
