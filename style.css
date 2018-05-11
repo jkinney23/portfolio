@@ -6,6 +6,7 @@ body {
     color: white;
 }
 
+
 /*
  * Navigation Bar
  */
@@ -42,7 +43,12 @@ body {
 
 .nav a:hover {
     color: #444;
-    background-color: rgba(183, 181, 210, .8);
+    background-color: rgba(183, 181, 210, .5);
+}
+
+.active {
+    color: #444;
+    background-color: rgba(183, 181, 210, .5);
 }
 
 .company {
@@ -316,3 +322,8 @@ hr {
 .hr-dark {
     background-color: #444;
 } 
+
+::selection {
+    background-color: #999;
+    color: rgb(222, 247, 0);
+}

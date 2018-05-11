@@ -10,14 +10,14 @@
   <body>
     
     <div class="nav">
-      <div class="nav-centered">
+      <nav class="nav-centered" id="nav">
         <ul>
-          <li class="company"><a href="#about">RACCOON STUDIOS</a></li>
-          <li class="nav-item"><a href="#about">HOME</a></li>
+          <li class="company">RACCOON STUDIOS</li>
+          <li class="nav-item active"><a href="#about">HOME</a></li>
           <li class="nav-item"><a href="#portfolio">PORTFOLIO</a></li>
           <li class="nav-item"><a href="#contact">CONTACT</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
 
     <div class="about" id="about">
@@ -95,10 +95,14 @@
       </div>
     </div>
 
-
     <div class="bottom">
       <p>Raccoon Studios &#8210; <a href="mailto:jkinney23@yahoo.ca">Jason Kinney</a> &#9400; 2018.  All Rights Reserved.</p>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scrollspy.min.js"></script>
+    <script>
+      $("#nav").scrollspy({});
+    </script>
   </body>
 </html>
