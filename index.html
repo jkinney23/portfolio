@@ -13,7 +13,7 @@
       <nav class="nav-centered" id="nav">
         <ul>
           <li class="company">RACCOON STUDIOS</li>
-          <li class="nav-item active"><a href="#about">HOME</a></li>
+          <li class="nav-item active"><a href="#about">ABOUT</a></li>
           <li class="nav-item"><a href="#portfolio">PORTFOLIO</a></li>
           <li class="nav-item"><a href="#contact">CONTACT</a></li>
         </ul>
@@ -102,7 +102,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="scrollspy.min.js"></script>
     <script>
-      $("#nav").scrollspy({});
+
+
+      $('a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+            var t = this.hash;
+            $('html, body').animate({
+                scrollTop: $(t).offset().top
+            }, 1000, function() {
+                    window.location.hash = t;
+            });
+        });
+
+        $("#nav").scrollspy({});
+
+
     </script>
   </body>
 </html>
