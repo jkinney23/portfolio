@@ -22,21 +22,31 @@ body {
 
 .nav ul {
     list-style: none;
-    text-align: center;
     padding: 0;
     margin: 0;
-
 }
-
 .nav li {
     box-shadow: 1px 2px 3px #444;
+}
+
+.company i {
+    margin-left: 15px;
+}
+
+.nav-item {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .nav:hover .nav-item{
+        display: block;
+    }
 }
 
 .nav a {
     padding: 0 20px 0 20px;
     display: block;
     color: white;
-    display: block;
     text-decoration: none;
     transition: background-color .3s, color .3s;
 }
@@ -46,13 +56,9 @@ body {
     background-color: rgba(183, 181, 210, .5);
 }
 
-.active {
+.nav .active {
     color: #444;
     background-color: rgba(183, 181, 210, .5);
-}
-
-.company {
-    display: none;
 }
 
 @media (min-width: 700px) {  
@@ -60,17 +66,14 @@ body {
     .nav {
         line-height: 64px;
         min-height: 64px;
+        text-align: right;
     }
 
     .nav-centered {
         width: 80%;
         margin: auto;
     }
-
-    .nav ul {
-        text-align: right;
-    }
-    
+   
     .nav li {
         box-shadow: none;
 
@@ -82,8 +85,13 @@ body {
         float: left;
     }
 
+    .company i {
+        display: none;
+    }
+
     .nav-item {
         display: inline-block;
+        text-align: right;
     }
 
 }
@@ -92,8 +100,7 @@ body {
  * About Content
  */
 .about {
-    padding-top: 64px;
-    padding-bottom: 48px;
+    padding-bottom: 64px;
     background-color: white;
     text-align: center;
 }
@@ -132,11 +139,9 @@ body {
     flex: 2;
 }
 
-
-
 @media (max-width: 699px) {
     .about {
-        padding-top: 76px;
+        padding-top: 48px;
         align-content: center;
     }
 
@@ -144,6 +149,7 @@ body {
 
 @media (min-width: 700px) {
     .about {
+        padding-top: 88px;
         display: flex;
     }
     .about-content {
@@ -158,6 +164,8 @@ body {
 /*
  * Portfoio content
  */
+
+
 .portfolio {
     width: 80%;
     margin: 48px auto 48px auto;
@@ -203,7 +211,7 @@ body {
  * Contact content
  */
 .contact {
-    background: white; 
+    background:white;
     color: #444;
 }
 
@@ -240,24 +248,16 @@ body {
 }
 
 .footer-icon {
-    color: rgb(4, 151, 170);
-    background-color: white;
-    padding: 11px 13px;
-    border-radius: 50%;
+    color:  white;
     font-size: 36px; 
     margin: 12px 10px;
     transition: color .3s, background-color .3s;
 }
 
-.footer-icon:hover {
-    background-color: rgba(36,36,93,.5);
-    color: white;
+.footer-icon:hover, .footer a:hover {
+    color: rgba(36,36,93,.5);
 }
 
-
-.footer a:hover {
-    color: #444;
-}
 
 /* Bottom border content */
 .bottom {
@@ -292,11 +292,12 @@ body {
     margin-bottom: -10px;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 699) {
     .section {
-        padding-top: 96px;
+        padding-top: 24px;
     }
 }
+
 
 p {
     margin: 10px 30px 10px 30px;
