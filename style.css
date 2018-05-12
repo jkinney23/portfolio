@@ -134,7 +134,7 @@ body {
 
 
 .about-content {
-    margin-top: 56px;
+    margin-top: 24px;
     color: #444;
     flex: 2;
 }
@@ -154,18 +154,17 @@ body {
     }
     .about-content {
         margin-right: 10%;
-        text-align: center;
+        text-align: right;
     }
     .about-img-container {
         margin-left: 10%;
     }
 }
 
+
 /*
  * Portfoio content
  */
-
-
 .portfolio {
     width: 80%;
     margin: 48px auto 48px auto;
@@ -173,24 +172,12 @@ body {
     flex-wrap: wrap;
 }
 
-/*  This is an example to do auto columns in a row
-    (I used flex wrap instead)
-@media (min-width: 600px) {
-    .portfolio {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-*/
-
 .portfolio-content {
     color: #444;
     margin: 24px auto 24px auto;
-    padding-bottom: 20px;
     border-radius: 5px;
     background: white;
     width: 280px;
-    /*flex-basis: 28%;  See above example note */
     box-shadow: 1px 2px 3px #444;
 }
 
@@ -214,6 +201,58 @@ body {
     background:white;
     color: #444;
 }
+
+.contact-content {
+}
+
+@media (min-width: 700px) {
+    .contact-content {
+        display: flex;
+    }
+}
+
+.contact-form {
+    padding: 0 10% 0 10%;
+    flex: 1;
+}
+
+.contact-form ul {
+    list-style: none;
+}
+
+.contact-form input[type=text], input[type=email], textarea {
+    padding: 32px 0 16px 0;
+    width: 100%;
+    color: #444;
+    font-size: 2em;
+    border: none;
+    border-bottom: 1px solid #444;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 224px;
+    resize: vertical;
+}
+
+.contact-form input[type=submit] {
+    width: 100%;
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 12px 2px;
+    cursor: pointer;
+}
+
+.contact-info {
+    font-size: 1.5em;
+    padding: 20px;
+    flex: 1;
+}
+
 
 /*
  * Footer content
@@ -300,7 +339,8 @@ body {
 
 
 p {
-    margin: 10px 30px 10px 30px;
+    font-size: 1.05em;
+    margin: 20px 30px 20px 30px;
 }
 
 h1, h2, h3 {
@@ -309,7 +349,7 @@ h1, h2, h3 {
 }
 
 hr {
-    height: 2px;
+    height: 1px;
     width: 48%;
     border-bottom: 1px solid rgb(223, 221, 250);
     margin-top: 28px;
@@ -325,6 +365,5 @@ hr {
 } 
 
 ::selection {
-    background-color: #999;
     color: rgb(222, 247, 0);
 }
