@@ -212,6 +212,7 @@ body {
 }
 
 .contact-form {
+    margin-left: -48px;
     padding: 0 10% 0 10%;
     flex: 1;
 }
@@ -231,6 +232,8 @@ body {
 }
 
 .contact-form textarea {
+    font-family: Impact, Charcoal, sans-serif;
+
     height: 224px;
     resize: vertical;
 }
