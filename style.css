@@ -250,6 +250,10 @@ body {
     cursor: pointer;
 }
 
+::placeholder {
+    color: #444;
+}
+
 .contact-info {
     font-size: 1.5em;
     padding: 20px;
@@ -302,25 +306,25 @@ body {
 
 
 /* Bottom border content */
-.bottom {
+.bottom-border {
     color: rgb(183, 181, 210);
     width: 100%;
     min-height: 72px;
     background-color: rgba(36,36,93,.8);
 }
 
-.bottom p {
+.bottom-border p {
     text-align: center;
     margin: 0;
     padding: 28px;
 }
- .bottom a {
+ .bottom-border a {
      color: rgb(183, 181, 210);
      text-decoration: none;
      transition: color .3s;
  }
 
- .bottom a:hover {
+ .bottom-border a:hover {
      color: white;
  }
 

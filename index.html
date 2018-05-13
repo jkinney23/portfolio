@@ -34,8 +34,7 @@
       <div class="about-content">
         <h2>Web Developer - Stage Lighting Designer - Musician</h2>  
         <hr class="hr-dark">
-        <p>Colors, sounds, lights, code, digital bits and bytes &#8210; all of these co-exist peacefully in my little world.  Equally at home tinkering with Linux Kernel internals, Fullstack Web Development, and transcribing Punk Rock for my Guitar Students.</p>
-        <p>After a decade long career providing technical support to the performing arts I have turned my professional attention full time towards software development.</p>
+        <p>Colors, sounds, lights, code, digital bits and bytes &#8210; all of these co-exist peacefully in my little world.  Equally at home tinkering with Linux Kernel internals, Fullstack Web Development, and transcribing Punk Rock songs for my Guitar Students.</p>        <p>After a decade long career providing technical support to the performing arts I have turned my professional attention full time towards software development.</p>
         <p>Check out some of my recent projects below.</p>
       </div>
     </div>
@@ -45,8 +44,10 @@
       <hr class="hr-light">
       <div class="portfolio">
         <div class="portfolio-content">
-          <a href="https://codepen.io/jinnjus/full/WJprRY/"><img src="JimiHendrixTribute.png">
-          <h3>Jimi Hendrix Tribute</h3></a>
+          <a href="https://codepen.io/jinnjus/full/WJprRY/">
+            <img src="JimiHendrixTribute.png">
+            <h3>Jimi Hendrix Tribute</h3>
+          </a>
         </div>
         <div class="portfolio-content">
           <img src="socialclubDJ009.jpg">
@@ -56,7 +57,6 @@
           <img src="http://via.placeholder.com/200x100">
           <h3>Site</h3>
         </div>
-
         <div class="portfolio-content">
           <img src="http://via.placeholder.com/200x100">
           <h3>Site</h3>
@@ -76,8 +76,8 @@
       <h1 style="text-align: center;">CONTACT</h1>
       <hr class="hr-dark">
       <div class="contact-content">
-        <div class="contact-form" id="contact-form">
-          <form>
+        <div class="contact-form">
+          <form id="contact-form" method="POST" action="https://mif71alpj2.execute-api.eu-west-1.amazonaws.com/email">
             <ul>
               <li>
                 <input type="text" id="name" name="name" placeholder="Name">
@@ -118,7 +118,7 @@
       </div>
     </div>
 
-    <div class="bottom">
+    <div class="bottom-border">
       <p>Raccoon Studios &#8210; <a href="mailto:jkinney23@yahoo.ca">Jason Kinney</a> &#9400; 2018.  All Rights Reserved.</p>
     </div>
 
@@ -140,6 +140,31 @@
         $("#nav").scrollspy({});
 
 
+    </script>
+    <script>
+        $.support.cors = true;
+        $('#contact-form').submit(function(event){
+            event.preventDefault();         
+            $.ajax(
+                {
+                    type: 'POST',
+                    url: 'https://mif71alpj2.execute-api.eu-west-1.amazonaws.com/email',                 
+                    dataType: 'json',
+                    data: {
+                        "name": $('#name').text(),                 
+                        "email": $('#email').text(),
+                        "subject": $('#subject').text(),
+                        "message": $('#message').text()
+                    },
+                    error: function(obj, msg, exc){},
+                    success: function(data){
+                       alert('complete');                       
+                    }
+                }
+            )
+    
+            return false;
+        });
     </script>
   </body>
 </html>
