@@ -202,12 +202,25 @@ body {
     color: #444;
 }
 
-.contact-content {
+.submitted {
+    display: none;
+    padding-top: 32px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.submitted i {
+    font-size: 128px;
+    color: green;
 }
 
 @media (min-width: 700px) {
     .contact-content {
         display: flex;
+    }
+    .submitted {
+        padding-top: 180px;
+        font-size: 1.5em;
     }
 }
 
@@ -233,8 +246,7 @@ body {
 
 .contact-form textarea {
     font-family: Impact, Charcoal, sans-serif;
-
-    height: 224px;
+    height: 180px;
     resize: vertical;
 }
 

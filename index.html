@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jason Kinney Web Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     
@@ -22,7 +22,7 @@
 
     <div class="about" id="about">
       <div class="about-img-container">
-        <img src="headbluecropped.jpg">
+        <img src="img/headbluecropped.jpg">
         <!--
         <br>
         <a href="https://www.linkedin.com/in/raccoonstudiosjasonkinney/"><i class="fa fa-linkedin about-icon"></i></a>
@@ -45,12 +45,12 @@
       <div class="portfolio">
         <div class="portfolio-content">
           <a href="https://codepen.io/jinnjus/full/WJprRY/">
-            <img src="JimiHendrixTribute.png">
+            <img src="img/JimiHendrixTribute.png">
             <h3>Jimi Hendrix Tribute</h3>
           </a>
         </div>
         <div class="portfolio-content">
-          <img src="socialclubDJ009.jpg">
+          <img src="img/socialclubDJ009.jpg">
           <h3>Social Club Lighting</h3>
         </div>
         <div class="portfolio-content">
@@ -75,7 +75,13 @@
     <div id="contact" class="section contact">
       <h1 style="text-align: center;">CONTACT</h1>
       <hr class="hr-dark">
+
+      <div class="submitted">
+        <h2>Thanks for contacting me!  I will get back to you as soon as I can!</h2>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </div>
       <div class="contact-content">
+        
         <div class="contact-form">
           <form id="contact-form" method="POST" action="https://mif71alpj2.execute-api.eu-west-1.amazonaws.com/email">
             <ul>
@@ -92,6 +98,9 @@
                 <textarea id="message" name="message" placeholder="Message"></textarea>
               </li>
               <li>
+                <div class="g-recaptcha" data-sitekey="6LdxE1kUAAAAAF-UXZiGKLDMioCw4GzbqE8LmhTh"></div>
+              </li>
+              <li>
                 <input type="submit" value="Submit">
               </li>
             </ul>
@@ -106,7 +115,7 @@
     <div class="footer">
       <div class="footer-content">
         <h3>ABOUT THIS PAGE</h3>
-        <p>Designed by Jason Kinney. Powered by CSS3, Flexbox, jQuery.</p>
+        <p>Designed by Jason Kinney. Powered by CSS3, Flexbox, jQuery, and AWS Lambda.</p>
         <p>View the <a href="https://github.com/jkinney23/portfolio">source code</a> on github.</p>
       </div>
       <div class="footer-content">
@@ -123,9 +132,10 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scrollspy.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/scrollspy.min.js"></script>
+    
     <script>
-
 
       $('a[href^="#"]').on('click', function(e) {
             e.preventDefault();
@@ -139,36 +149,8 @@
 
         $("#nav").scrollspy({});
 
+    </script>
 
-    </script>
-    <script>
-        $.support.cors = true;
-        $('#contact-form').submit(function(event){
-            event.preventDefault(); 
-            var data = {
-              "name": $('#name').val(),                 
-              "email": $('#email').val(),
-              "subject": $('#subject').val(),
-              "message": $('#message').val()
-            }      
-            $.ajax(
-                {
-                    type: 'POST',
-                    url: 'https://mif71alpj2.execute-api.eu-west-1.amazonaws.com/email',                 
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    data: JSON.stringify(data),
-                    error: function(obj, msg, exc){
-                      alert('Form Submission Failed.');
-                    },
-                    success: function(data){
-                       alert('complete');                       
-                    }
-                }
-            )
-    
-            return false;
-        });
-    </script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
