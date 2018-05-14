@@ -144,19 +144,23 @@
     <script>
         $.support.cors = true;
         $('#contact-form').submit(function(event){
-            event.preventDefault();         
+            event.preventDefault(); 
+            var data = {
+              "name": $('#name').val(),                 
+              "email": $('#email').val(),
+              "subject": $('#subject').val(),
+              "message": $('#message').val()
+            }      
             $.ajax(
                 {
                     type: 'POST',
                     url: 'https://mif71alpj2.execute-api.eu-west-1.amazonaws.com/email',                 
                     dataType: 'json',
-                    data: {
-                        "name": $('#name').text(),                 
-                        "email": $('#email').text(),
-                        "subject": $('#subject').text(),
-                        "message": $('#message').text()
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    error: function(obj, msg, exc){
+                      alert('Form Submission Failed.');
                     },
-                    error: function(obj, msg, exc){},
                     success: function(data){
                        alert('complete');                       
                     }
